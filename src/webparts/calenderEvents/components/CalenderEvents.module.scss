@@ -1,0 +1,18 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.calenderEvents {
+  .heading {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+
+  .pagetitle {
+    font-size: 25px;
+    color: "[theme:bodyText, default: #323130]";
+    text-align: left;
+    font-weight: 700;
+  }
+}
