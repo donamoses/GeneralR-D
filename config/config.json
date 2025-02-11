@@ -9,11 +9,20 @@
           "manifest": "./src/webparts/calenderEvents/CalenderEventsWebPart.manifest.json"
         }
       ]
+    },
+    "people-picker-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/peoplePicker/PeoplePickerWebPart.js",
+          "manifest": "./src/webparts/peoplePicker/PeoplePickerWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "CalenderEventsWebPartStrings": "lib/webparts/calenderEvents/loc/{locale}.js",
-    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "PeoplePickerWebPartStrings": "lib/webparts/peoplePicker/loc/{locale}.js"
   }
 }
