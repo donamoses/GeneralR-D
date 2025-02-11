@@ -7,6 +7,7 @@ export interface ICalenderEventsProps {
 
 export interface ICalenderEventsState {
   currentUser: IUser;
+  eventData: any[];
 }
 export interface IUser {
   id: any;

@@ -14,6 +14,20 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.19.0"
     },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Calendars.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Calendars.ReadBasic"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Calendars.ReadWrite"
+      }
+    ],
     "metadata": {
       "shortDescription": {
         "default": "General description"
