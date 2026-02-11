@@ -35,6 +35,14 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onChangeSuggestionDetails = this.onChangeSuggestionDetails.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onAddClose = this.onAddClose.bind(this);
+    this.handleApprove = this.handleApprove.bind(this);
+    this.onApprove = this.onApprove.bind(this);
+    this.onApproveClose = this.onApproveClose.bind(this);
+    this.handleReject = this.handleReject.bind(this);
+    this.onReject = this.onReject.bind(this);
+    this.onRejectClose = this.onRejectClose.bind(this);
+    this.onChangeRemarkComments = this.onChangeRemarkComments.bind(this);
 
   }
   public async componentDidMount() {
@@ -62,7 +70,7 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
   private loadSuggestions = async () => {
     let requestmasterfilter = "";
     switch (this.state.selectedTabKey) {
-      case "AllSuggestions":
+      case "Suggestions":
         requestmasterfilter = `Status eq 'Approved'`;
         break;
       case "MySuggestion":
@@ -146,7 +154,7 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
     const suggestionListurl = this.props.context.pageContext.web.serverRelativeUrl + strings.queryList + this.props.suggestionBoxList;
     const updateItem = {
       Status: "Approved",
-      ApproverComments: this.state.comments
+      AdminComments: this.state.comments
     }
     const approveupdated = await this.service.updateItem(suggestionListurl, updateItem, Number(this.state.selectedSuggestionId));
     if (approveupdated) {
@@ -170,7 +178,7 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
     const suggestionListurl = this.props.context.pageContext.web.serverRelativeUrl + strings.queryList + this.props.suggestionBoxList;
     const updateItem = {
       Status: "Rejected",
-      ApproverComments: this.state.comments
+      AdminComments: this.state.comments
     }
     const rejectupdated = await this.service.updateItem(suggestionListurl, updateItem, Number(this.state.selectedSuggestionId));
     if (rejectupdated) {
@@ -299,7 +307,7 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
                   <h3>{"Rejected"}</h3>
                   <TextField label="Remark Comments" multiline rows={3} autoAdjustHeight value={this.state.comments} onChange={this.onChangeRemarkComments} required />
                   <div style={{ marginTop: '20px', textAlign: 'right' }}>
-                    {this.state.title.replace(/\s/g, '').length > 0 && this.state.suggestionDetails.replace(/\s/g, '').length > 0 && (
+                    {this.state.comments.replace(/\s/g, '').length > 0 && (
                       <PrimaryButton className={styles.btn} onClick={() => this.onReject()}> Reject </PrimaryButton>)}
                     <PrimaryButton className={styles.btn} onClick={this.onRejectClose} >Cancel</PrimaryButton >
                   </div>
@@ -317,7 +325,7 @@ export default class SuggestionBox extends React.Component<ISuggestionBoxProps, 
                   <h3>{"Approve"}</h3>
                   <TextField label="Remark Comments" multiline rows={3} autoAdjustHeight value={this.state.comments} onChange={this.onChangeRemarkComments} required />
                   <div style={{ marginTop: '20px', textAlign: 'right' }}>
-                    {this.state.title.replace(/\s/g, '').length > 0 && this.state.comments.replace(/\s/g, '').length > 0 && (
+                    {this.state.comments.replace(/\s/g, '').length > 0 && (
                       <PrimaryButton className={styles.btn} onClick={() => this.onApprove()}> Approve </PrimaryButton>)}
                     <PrimaryButton className={styles.btn} onClick={this.onApproveClose} >Cancel</PrimaryButton >
                   </div>
