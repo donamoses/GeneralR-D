@@ -22,6 +22,7 @@
     "@microsoft/sp-webpart-base": "1.19.0",
     "@pnp/logging": "^4.6.0",
     "@pnp/sp": "^4.6.0",
+    "@pnp/spfx-controls-react": "^3.23.0",
     "@pnp/spfx-property-controls": "^3.19.0",
     "moment": "^2.30.1",
     "react": "17.0.1",

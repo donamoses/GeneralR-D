@@ -9,11 +9,21 @@
           "manifest": "./src/webparts/calenderEvents/CalenderEventsWebPart.manifest.json"
         }
       ]
+    },
+    "suggestion-box-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/suggestionBox/SuggestionBoxWebPart.js",
+          "manifest": "./src/webparts/suggestionBox/SuggestionBoxWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "CalenderEventsWebPartStrings": "lib/webparts/calenderEvents/loc/{locale}.js",
-    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "SuggestionBoxWebPartStrings": "lib/webparts/suggestionBox/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
   }
 }
